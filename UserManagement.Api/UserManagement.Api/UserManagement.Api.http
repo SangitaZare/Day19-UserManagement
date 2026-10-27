@@ -1,0 +1,32 @@
+@host = https://localhost:7227
+
+### 1. Create a user
+POST {{host}}/api/users
+Content-Type: application/json
+
+{
+  "name": "Asha",
+  "email": "asha@example.com"
+}
+
+### 2. Get all users
+GET {{host}}/api/users
+
+### 3. Get user by id
+GET {{host}}/api/users/1
+
+### 4. Update user
+PUT {{host}}/api/users/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Asha K",
+  "email": "asha.k@example.com"
+}
+
+### 5. Delete user
+DELETE {{host}}/api/users/1
+
+### 6. Get a user that doesn't exist (should return 404)
+GET {{host}}/api/users/999
