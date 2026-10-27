@@ -1,0 +1,22 @@
+@UserManagement.Day19_HostAddress = http://localhost:5159
+
+### List all users
+GET {{UserManagement.Day19_HostAddress}}/api/users
+Accept: application/json
+
+### Create a user
+POST {{UserManagement.Day19_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+  "name": "Sangita",
+  "email": "sangita@example.com"
+}
+
+### Get a user by id
+GET {{UserManagement.Day19_HostAddress}}/api/users/1
+Accept: application/json
+
+### Get a user that does not exist -> expect 404
+GET {{UserManagement.Day19_HostAddress}}/api/users/999
+Accept: application/json
