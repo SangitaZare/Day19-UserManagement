@@ -243,3 +243,30 @@ for itself as the number of operations grows.
 - [ ] Swap the In-Memory provider for SQL Server + EF Core migrations
 - [ ] Unit tests — `UserService` directly, and the CQRS handlers in isolation
 - [ ] Pagination on the list endpoints
+
+---
+
+## Folder layout
+
+Reorganised to match the rest of the workspace — one folder per project, with `backend/`
+and `frontend/` inside. Each `.csproj` sits directly in its own folder (no repeated
+nesting):
+
+```
+user-management/
+├─ backend/
+│  ├─ UserManagement.Api/      service-layer version → https://localhost:7227
+│  │  ├─ UserManagement.Api.csproj
+│  │  └─ UserManagement.Api.slnx
+│  └─ UserManagement.Day19/    CQRS version          → https://localhost:7292
+│     ├─ UserManagement.Day19.csproj
+│     └─ UserManagement.Day19.slnx
+└─ frontend/                   reserved; this exercise is backend-only by design
+```
+
+```bash
+cd user-management/backend/UserManagement.Api && dotnet run
+```
+
+> Port `7292` collides with `file-handling`'s backend. Change one of them in
+> `Properties/launchSettings.json` before running both.

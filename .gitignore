@@ -1,50 +1,59 @@
-## .NET build output
+# ─────────── .NET build output ───────────
 [Bb]in/
 [Oo]bj/
-[Dd]ebug/
-[Rr]elease/
-x64/
-x86/
-[Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-build/
-bld/
+[Oo]ut/
 publish/
+artifacts/
 
-## Visual Studio / Rider / VS Code per-user state
+# ─────────── Visual Studio / Rider ───────────
 .vs/
-.vscode/
 .idea/
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
-*.csproj.user
-*.dbmdl
-*.jfm
+msbuild.log
+msbuild.err
+msbuild.wrn
 
-## NuGet
-*.nupkg
-*.snupkg
-packages/
-!packages/build/
-project.lock.json
-project.fragment.lock.json
-artifacts/
+# ─────────── Node / Angular ───────────
+node_modules/
+.angular/
+dist/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-## Runtime logs
+# ─────────── Tests / coverage ───────────
+[Tt]est[Rr]esult*/
+coverage/
+*.coverage
+*.trx
+
+# ─────────── Local dev databases (recreate with EF migrations) ───────────
+*.db
+*.db-shm
+*.db-wal
+*.mdf
+*.ldf
+
+# ─────────── Secrets / local config ───────────
+appsettings.Local.json
+appsettings.*.Local.json
+secrets.json
+.env
+.env.local
+
+# ─────────── Uploaded / generated content ───────────
+wwwroot/uploads/
+Uploads/
+
+# ─────────── Logs ───────────
 logs/
 *.log
 
-## Local secrets — never commit these
-appsettings.*.local.json
-secrets.json
-*.pfx
-*.key
-
-## OS cruft
+# ─────────── OS cruft ───────────
+.DS_Store
 Thumbs.db
 ehthumbs.db
 Desktop.ini
-$RECYCLE.BIN/
-*.DS_Store
